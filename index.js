@@ -316,12 +316,12 @@ function lotsOfArt(artists) {
   let results = [];
   for(let i = 0; i < artists.length; i++){
     let paintings = artists[i].paintings
-    if(paintings > 100);
-    results.push(artists[i].name)
-  }
-  return results;
+    if (paintings >= 100){
+      results.push(artists[i].name);
+    }
+  }return results;
 }
-console.log(lotsOfArt(artists));
+console.log('task 7:', lotsOfArt(artists));
 
 
 
