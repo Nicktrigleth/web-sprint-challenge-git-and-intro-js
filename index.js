@@ -208,10 +208,11 @@ Practice accessing data above by console.log-ing following items:
 (no functions needed) */
 
 //(1) Name of the first artist (0th index) in the array
-
+console.log('task 1:', artists[0].name);
 
 
 //(2) Bio of the third artist (2nd index) in the array 
+console.log('task 1.2:', artists[2].bio);
 
 
 
@@ -219,6 +220,8 @@ Practice accessing data above by console.log-ing following items:
 (no function needed) 
 There is a typo in your dataset 😱 The 9th artist, Vincent Van Gogh is currently Vincent Van Dough. Fix this issue and console.log() to check your work. */
 
+const vincentVanDough = artists[8].name =  'Vincent Van Gogh'
+console.log('task 2:', vincentVanDough);
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀  
@@ -230,9 +233,10 @@ Use getArtistByIndex to do the following:
 
 🌟 EXAMPLE: if getArtistByIndex is invoked with the artists array and the number 0, it will return `the artist at index 0 is Amedeo Modigliani` */
 
-function getArtistByIndex(/*Your Code Here*/) {
-  /*Your Code Here*/
+function getArtistByIndex(artists, id) {
+  return `the artist at index ${id} is ${artists[id].name}`;
 }
+console.log('task 3:', getArtistByIndex(artists, 1));
 
 
 
@@ -244,9 +248,15 @@ Use listOfNames to do the following:
 🌟 EXAMPLE of return: ["Amedeo Modigliani", "Vasiliy Kandinskiy", "Diego Rivera"....]
 */
 
-function listOfNames(/*Your Code Here*/) {
-  /*Your Code Here*/
+function listOfNames(artists) {
+  let artistsNames = [];
+  for (let i = 0; i < artists.length; i++){
+    let name = artists[i].name
+    artistsNames.push(name);
+  }
+  return artistsNames;
 }
+console.log('task 4:', listOfNames(artists));
 
 
 
@@ -259,9 +269,13 @@ Use removeArtist to do the following:
 5. Return the resulting copied array
 🌟 EXAMPLE: if removeArtist is invoked with the artists array and the number 0, it will return the resulting array with Amedeo Modigliani removed from our dataset. */
 
-function removeArtist(/*Your Code Here*/) {
-  /*Your Code Here*/
+function removeArtist(array, number) {
+  let newArray = [...array];
+  newArray.splice(number, 1);
+  return newArray;
 }
+console.log('task 5:', removeArtist(artists, 0));
+
 
 
 
@@ -281,9 +295,12 @@ Use addArtist to do the following:
 5. Add the newly created object to the copied array, then return the copied array
 🌟 EXAMPLE: Invoking addArtist(artists, 'John Doe', '1988-2022', 'Full Stack Development', 'African American', 'I have a background in customer service at Big Retail Chain. I am attending BloomTech to become a Frontend Developer.') should return the artists array with the above object added to the end of the array. */
 
-function addArtist(/*Your Code Here*/) {
-  /*Your Code Here*/
+function addArtist(artists, name, years, genre, nationality, bio) {
+  let object = {name: name, years: years, genre: genre, nationality: nationality, bio: bio};
+  artists.push(object);
+  return artists;
 }
+console.log(addArtist(artists, 'nick', '19', 'white', 'straight', 'attending bloomtech'));
 
 
 
@@ -295,9 +312,16 @@ Use lotsOfArt to do the following:
 🌟 EXAMPLE: lotsOfArt(artists) will return ["Amedeo Modigliani", "Rene Magritte", ... "Albrecht Dürer"]
 */
 
-function lotsOfArt(/*Your Code Here*/) {
-  /*Your Code Here*/
+function lotsOfArt(artists) {
+  let results = [];
+  for(let i = 0; i < artists.length; i++){
+    let paintings = artists[i].paintings
+    if(paintings > 100);
+    results.push(artists[i].name)
+  }
+  return results;
 }
+console.log(lotsOfArt(artists));
 
 
 
